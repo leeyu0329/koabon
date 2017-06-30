@@ -1,0 +1,24 @@
+{
+  "name": "koabon-framework",
+  "version": "1.0.0",
+  "description": "koabon framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "koabon"
+  ],
+  "author": "liyu",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.3.0"
+  }
+}
