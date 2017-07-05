@@ -7,6 +7,7 @@ const bodyParser=require('koa-bodyparser')
 const path=require('path')
 const static=require('koa-static')
 const views=require('koa-views')
+const { uploadFile } = require('./app/util/upload')
 
 //创建Koa对象
 const app=new Koa()
@@ -67,6 +68,26 @@ router.get('/cookie', async (ctx, next)=>{
 })
 
 //session 暂时不提供支持
+
+router.get('/upload', async (ctx, next)=>{
+	await ctx.render('upload', {
+		'title':'上传文件'
+	})
+})
+
+router.post('/upload_do', async (ctx, next)=>{
+	//上传文件请求处理
+	
+	let result={success:false}
+	let serverFilePath=path.join(__dirname, 'static/upload')
+
+	result=await uploadFile(ctx, {
+		fileType:'image',
+		path:serverFilePath
+	})
+
+	ctx.body=result
+})
 
 //add koa-bodyparser middleware
 app.use(bodyParser())
