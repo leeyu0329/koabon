@@ -1,0 +1,22 @@
+app
+	-- config										配置项目录
+			-- config.js
+	-- common										公共方法及工具目录
+			-- common.js
+	-- controllers							控制器							
+			-- user.js
+	-- models 									模型
+			-- userModel.js
+	-- views 										视图
+			-- login.ejs
+	-- routes										路由
+			-- route.js							主路由文件
+
+static												静态资源文件目录
+	-- css
+	-- js
+	-- fonts
+	-- images
+	-- upload
+app.js												主文件入口
+package.json									配置项
